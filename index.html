@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE ANALYST NETWORK</title>
+  <meta name="description" content="The Analyst Network – Daily Motivation, Mindset Growth, and Success Inspiration through powerful videos and content. Stay motivated daily.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(17,17,17,0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+      transition: background 0.4s ease;
+    }
+    nav.scrolled { background: #111; }
+    nav .logo {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #ff416c;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    nav ul { list-style: none; display: flex; gap: 25px; }
+    nav ul li a {
+      text-decoration: none;
+      color: #f5f5f5;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover { color: #ff416c; }
+
+    /* Header */
+    header {
+      padding: 120px 20px 90px;
+      background: linear-gradient(135deg, #1a2a6c, #3b3b98, #6a11cb, #2575fc);
+      color: white;
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
+    header h1 {
+      font-size: 4em;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0px 4px 12px rgba(0,0,0,0.6);
+      animation: slideIn 1.5s ease-out;
+    }
+    header p {
+      font-size: 1.3em;
+      font-weight: 400;
+      letter-spacing: 1px;
+      opacity: 0.95;
+    }
+
+    /* Animations */
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @keyframes slideIn { from {transform:translateY(30px); opacity:0;} to {transform:translateY(0); opacity:1;} }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    section h2 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: #ff416c;
+      position: relative;
+      display: inline-block;
+    }
+    section h2::after {
+      content: "";
+      width: 60%;
+      height: 3px;
+      background: #ff416c;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    iframe {
+      width: 100%;
+      height: 315px;
+      border-radius: 15px;
+      border: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    iframe:hover { transform: scale(1.03); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      margin-top: 25px;
+      font-size: 1.05em;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      border-radius: 40px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+    }
+    .btn:hover {
+      background: linear-gradient(135deg, #ff4b2b, #ff416c);
+      transform: translateY(-3px) scale(1.05);
+    }
+    .btn i {
+      font-size: 1.3em;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+    .btn:hover i {
+      transform: scale(1.2) translateY(-2px);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    }
+    .btn .fa-youtube { color: #ff0000; }
+    .btn .fa-facebook { color: #1877f2; }
+
+    /* Subscribe CTA */
+    .subscribe-cta {
+      background: #1a1a1a;
+      padding: 50px 25px;
+      border-radius: 18px;
+      margin: 60px auto;
+      max-width: 800px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+    .subscribe-cta p { font-size: 1.2em; margin-bottom: 30px; color: #ccc; }
+
+    /* Footer */
+    footer {
+      padding: 25px 15px;
+      background: #111;
+      color: #888;
+      text-align: center;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+    .footer-icons {
+      margin-top: 15px;
+    }
+    .footer-icons a {
+      color: #f5f5f5;
+      margin: 0 10px;
+      font-size: 1.3em;
+      transition: color 0.3s ease;
+    }
+    .footer-icons a:hover { color: #ff416c; }
+
+    /* Scroll-to-Top Button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: #ff416c;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 12px 15px;
+      font-size: 1.3em;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: background 0.3s ease;
+    }
+    #scrollTopBtn:hover { background: #ff4b2b; }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="logo">THE ANALYST</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="https://youtube.com/@daily-motivation-quotes1" target="_blank">YouTube</a></li>
+      <li><a href="https://www.facebook.com/TheAnalyst673" target="_blank">Facebook</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>THE ANALYST NETWORK</h1>
+    <p>DAILY MOTIVATION • MINDSET GROWTH • SUCCESS INSPIRATION</p>
+  </header>
+
+  <!-- Content -->
+  <section id="content">
+    <h2>Our Content</h2>
+    <p>Discover some of our most powerful motivational videos directly from YouTube:</p>
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/CaIXTt0D084" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/y9Bu-4tv7LE" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/XeszHckjc6E" allowfullscreen></iframe>
+    </div>
+
+    <!-- Buttons -->
+    <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+      <a href="https://youtube.com/@daily-motivation-quotes1" target="_blank" class="btn">
+        <i class="fab fa-youtube"></i> See More on YouTube
+      </a>
+      <a href="https://www.facebook.com/TheAnalyst673" target="_blank" class="btn">
+        <i class="fab fa-facebook"></i> Visit Our Facebook
+      </a>
+    </div>
+  </section>
+
+  <!-- Subscribe Call to Action -->
+  <section class="subscribe-cta">
+    <h2>Stay Motivated Daily 🚀</h2>
+    <p>Join thousands of motivated minds. Subscribe to our YouTube channel for daily inspiration, growth, and success tips!</p>
+    <a href="https://youtube.com/@daily-motivation-quotes1" target="_blank" class="btn">
+      <i class="fab fa-youtube"></i> Subscribe on YouTube
+    </a>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions, ideas, or collaboration requests? Reach out to us anytime.</p>
+    <p style="margin-top: 15px;">
+      📧 <a href="mailto:theanalyst951@gmail.com" style="color:#ff416c; text-decoration:none;">theanalyst951@gmail.com</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 The Analyst Network. All Rights Reserved.</p>
+    <div class="footer-icons">
+      <a href="https://youtube.com/@daily-motivation-quotes1" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/TheAnalyst673" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    // Navbar background change on scroll
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    // Scroll-to-top button
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
